@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import store from './store';
+import { ThemeProvider } from 'styled-components';
+import theme from './utils/theme';
+import GlobalStyle from './utils/globals';
+import App from './containers/App';
+
+import '../node_modules/react-modal-video/scss/modal-video.scss';
+import '../node_modules/slick-carousel/slick/slick.css';
+import '../node_modules/slick-carousel/slick/slick-theme.css';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Fragment>
+        <Helmet>
+          <title>Movie App</title>
+          <meta
+            name="description"
+            content="A Movie App where you can check all your favorite movies, as well as the cast of it, and so mucnh more! Made with ❤️ by Shekinah"
+          />
+          <link rel="canonical" href="" />
+        </Helmet>
+        <App />
+        <GlobalStyle />
+      </Fragment>
+    </ThemeProvider>
+  </Provider>,
+  document.querySelector('#root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
