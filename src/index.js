@@ -9,9 +9,9 @@ import theme from './utils/theme';
 import GlobalStyle from './utils/globals';
 import App from './containers/App';
 
-//import '../node_modules/react-modal-video/scss/modal-video.scss';
-//import '../node_modules/slick-carousel/slick/slick.css';
-//import '../node_modules/slick-carousel/slick/slick-theme.css';
+import '../node_modules/react-modal-video/scss/modal-video.scss';
+import '../node_modules/slick-carousel/slick/slick.css';
+import '../node_modules/slick-carousel/slick/slick-theme.css';
 
 ReactDOM.render(
   <Provider store={store}>
