@@ -1,6 +1,8 @@
 import * as TYPES from './types';
 import tmdbAPI from '../api/tmdb';
 import history from '../history';
+import { Helmet } from 'react-helmet';
+
 
 // When app inits
 export const init = () => async dispatch => {
